@@ -2,6 +2,38 @@
 
 Outline: The following contains descriptions of the 15 distinct components of our website architecture. Components are separated by type (model, controller, or view).
 
+## Code stub locations
+
+The server is written in Java and the client in TypeScript. Components that reside on both the client and the server have a stub on each side. Every stub's doc comment states its responsibility, where it resides, what it communicates with, and what crosses the network.
+
+- **Server stubs (Java):** [`server/src/main/java/ca/gitfit/spottr/`](server/src/main/java/ca/gitfit/spottr/)
+	- `model/`: UserModel, WorkoutModel, AttendanceModel, StatisticsModel
+	- `controller/`: AuthController, AttendanceController, WorkoutController, AnalyticsController
+	- `data/`: shared data types (User, Workout, Exercise, CheckIn, TrainingSuggestions, etc.)
+- **Client stubs (TypeScript):** [`client/src/`](client/src/)
+	- `models/`: WorkoutModel, StatisticsModel
+	- `controllers/`: AuthController, AttendanceController, WorkoutController, AnalyticsController
+	- `views/`: LandingPageView, AuthView, HomeView, BusynessGraphView, CheckInView, WorkoutsView, WorkoutEditorView
+	- `data/types.ts`: shared data types
+
+| Component | Server stub | Client stub |
+| --- | --- | --- |
+| UserModel | `model/UserModel.java` | — |
+| WorkoutModel | `model/WorkoutModel.java` | `models/WorkoutModel.ts` |
+| AttendanceModel | `model/AttendanceModel.java` | — |
+| StatisticsModel | `model/StatisticsModel.java` | `models/StatisticsModel.ts` |
+| AuthController | `controller/AuthController.java` | `controllers/AuthController.ts` |
+| AttendanceController | `controller/AttendanceController.java` | `controllers/AttendanceController.ts` |
+| WorkoutController | `controller/WorkoutController.java` | `controllers/WorkoutController.ts` |
+| AnalyticsController | `controller/AnalyticsController.java` | `controllers/AnalyticsController.ts` |
+| LandingPageView | — | `views/LandingPageView.ts` |
+| AuthView | — | `views/AuthView.ts` |
+| HomeView | — | `views/HomeView.ts` |
+| BusynessGraphView | — | `views/BusynessGraphView.ts` |
+| CheckInView | — | `views/CheckInView.ts` |
+| WorkoutsView | — | `views/WorkoutsView.ts` |
+| WorkoutEditorView | — | `views/WorkoutEditorView.ts` |
+
 ## Models
 
 ### UserModel
