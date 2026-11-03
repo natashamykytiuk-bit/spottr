@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+server/build/
+server/out/
+.gradle/
+client/dist/
+*.class
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
